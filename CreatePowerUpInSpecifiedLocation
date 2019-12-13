@@ -1,0 +1,20 @@
+public void MakePowerUp(Transform location)
+    {
+        int randomNum = Random.Range(1, 9); 
+
+        //Debug.Log(randomNum);
+
+        if (randomNum == 2) //50% spawn rate for now
+        {
+            GameObject firePowerUp = Instantiate(firePowerUpPrefab) as GameObject;
+
+            Vector3 newLocal = new Vector3(0f, 1f, 0f);
+
+            firePowerUp.transform.position = location.position + newLocal;
+
+        }
+
+        randomNum = 0; //reset randomNum back to 0
+    }
+    
+    //takes the transform of where you want the powerup to spawn and spawns one there
