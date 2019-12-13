@@ -1,0 +1,15 @@
+IEnumerator Shrink()
+    {
+        yield return new WaitForSeconds(4);
+
+        shrinkTime = true;
+        deadScale = new Vector3(0f, 0f, 0f);
+
+        Transform powerUpLocation = transform;
+        GameManager.Instance.MakePowerUp(powerUpLocation);
+
+        yield return new WaitForSeconds(1);
+        
+        Destroy(gameObject);
+        //Instance.enabled = false;
+    }
